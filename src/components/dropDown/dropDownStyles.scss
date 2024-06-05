@@ -1,0 +1,37 @@
+@import '../../styles/variables';
+
+.drop-down{
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    
+    &__lbl{
+        font-size: 14px;
+        color: $color-lbl;
+        &_strong{
+            font-weight:600 ;
+        }
+       
+        
+    }
+    &__select{
+        padding: 50px;
+        gap: 10px;
+        width: 100%;
+        font-size: 16px;
+        border-radius: 5px;
+        //border: none;
+        border-bottom: 1px solid $color-blue;
+        outline: none;
+        padding: 0;
+        color: $color-blue;
+    }
+
+    
+   
+    
+
+    
+}

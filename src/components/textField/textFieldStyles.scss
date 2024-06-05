@@ -1,0 +1,46 @@
+@import 'src/styles/variables.scss';
+
+.container {
+    box-sizing: border-box;
+    display: flex;
+    gap: 4px;
+    flex-direction: column;
+   
+    &__lbl{
+    
+    font-size: 14px;
+    color: $color-lbl;
+    &_strong{
+        font-weight:600 ;
+    }
+        }
+
+
+
+    &__input {
+        border: none;
+        border-bottom: 0.5px  $color-blue;
+        border-bottom-style: groove;
+        //outline: #d2cfcf;
+        outline: none;
+        padding-left: 5px;
+        font-size: 14px;
+    }
+
+    &__info{
+    font-size: 12px;
+
+    &_success{
+        color: lightgreen;
+    }
+    
+    &_info{
+        color: rgb(18, 170, 220);
+    }
+
+    &_error{
+    color: red;
+    }
+    }
+
+}

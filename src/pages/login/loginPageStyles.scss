@@ -1,0 +1,36 @@
+@import 'src/styles/variables.scss';
+
+.login-page{
+    &__form{
+        min-width: 300px;
+        min-height: 450px;
+        border-radius: 2px;
+        box-shadow: 0 0 10px 0 $color-blue ;
+        //padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        
+        //justify-content: center;
+
+        &__items{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            gap:20px;
+            padding-bottom: 30px;
+            
+
+            
+        }
+        &__label{
+          
+            padding-top: 30px;
+            color: $color-blue;
+            
+        }
+    }
+
+    
+}
