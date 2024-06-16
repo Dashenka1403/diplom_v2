@@ -108,7 +108,7 @@ export const InfoPage: FC =  () =>{
         setSelectedDiscipline(undefined);
        // console.log(selectedDiscipline)
         // 
-        console.log('hello');
+        //console.log('hello');
     }, [groupData, selectedGroupId, selectedDisciplineId]);
 
     // useEffect(() => {

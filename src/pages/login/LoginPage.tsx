@@ -1,19 +1,34 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { Button, DropDown, TextField } from "../../components";
 import { WidgetLayout } from "../../components/layouts";
 import './loginPageStyles.scss'
 import { RoutesPath } from "../../constants/commonConstants";
 import { useNavigate } from "react-router-dom";
+import { useAppDispatch, useAppSelector } from "../../hooks/reduxToolkitHooks";
+import { signIn } from "../../services";
 
 
 
 export const LoginPage: FC = () => {
+  const { accessToken, role } = useAppSelector((state) => state.user);
+  const dispatch = useAppDispatch();
+  
     const navigate = useNavigate();
     const [login, setLogin] = useState<string>('');
     const [password, setPassword] = useState<string>('');
-    const [role, setRole] = useState<string>('');
+  //  const [role, setRole] = useState<string>('');
     const[errorMessage, setErrorMessage] = useState<string>('');
 
+    useEffect(() => {
+      if(accessToken) {
+          if(role === 'rpd' || !role) {
+              navigate(`/${RoutesPath.InfoPage}`);
+          } else {
+             // navigate(`/${RoutesPath.Login}`);
+             console.log("ERROR")
+          }
+      }
+  }, [accessToken, role, navigate]);
 
     const loginChangedHandler = (value: string) => {
         setLogin(value);
@@ -23,19 +38,23 @@ export const LoginPage: FC = () => {
         setPassword(value);
     };
 
-    const roleChangedHandler = (value: string) => {
-      setRole(value);
-  };
+    const loginHandler = () => {
+      dispatch(signIn({login, password}));
+  }
 
-    const toGenerateDocsHandler = () => {
-      if(login&&password)
-        navigate(RoutesPath.InfoPage);
-      else 
-      {
-        setErrorMessage('Заполните поле ')
-      }
+  //   const roleChangedHandler = (value: string) => {
+  //     setRole(value);
+  // };
+
+    // const toGenerateDocsHandler = () => {
+    //   if(login&&password)
+    //     navigate(RoutesPath.InfoPage);
+    //   else 
+    //   {
+    //     setErrorMessage('Заполните поле ')
+    //   }
  
-    }
+    // }
 
     return(
       <WidgetLayout>
@@ -44,7 +63,7 @@ export const LoginPage: FC = () => {
         <div className='login-page__form__items'>
             <TextField labelText="Имя пользователя" infoType='error' info={errorMessage} type='text' value={login} onChange={loginChangedHandler} />
             <TextField labelText="Пароль" infoType='error' info={errorMessage} type='password'  value={password} onChange={passwordChangedHandler}  />
-            <DropDown selectedChanged={roleChangedHandler}  label="Укажите роль" items={[
+            {/* <DropDown selectedChanged={roleChangedHandler}  label="Укажите роль" items={[
              
               {
                 text: 'Администратор', value: 'admin'
@@ -58,9 +77,9 @@ export const LoginPage: FC = () => {
               {
                 text: 'Преподаватель', value: 'teacher'
               }
-            ]} />
+            ]} /> */}
         </div>
-        <Button text="Войти" onClick = {toGenerateDocsHandler}/>
+        <Button text="Войти" onClick = {loginHandler}/>
       </div>
       </WidgetLayout>
     );
