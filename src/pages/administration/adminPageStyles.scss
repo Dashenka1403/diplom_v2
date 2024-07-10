@@ -1,0 +1,18 @@
+@import '../../styles/variables';
+
+.admin-page{
+    width: 100%;
+    height: calc(100vh - 75px);
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    
+
+    &__button-back{
+        align-items: center;
+        justify-content: flex-start;
+        width:fit-content;
+        margin: 20px 0  20px 0;
+    }
+
+}

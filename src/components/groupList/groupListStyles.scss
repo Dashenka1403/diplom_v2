@@ -24,8 +24,6 @@
         font-weight: 500;
         box-shadow: $color-delimetershadow;
         border-bottom: 1px solid $color-dirtywhite;
-       
-
 
         &_selected{
             background-color: rgb(182, 189, 212);
@@ -37,24 +35,32 @@
         &:hover{
             background-color: $color-dirtywhite;
         }
-   }
 
-   &__item-fio{
+     
+
+      &__fio{
          display: flex;
+         flex-direction: row;
+        
          
-   }
-
-   &__item_actions{
-        margin-left: auto;
-         display: flex;
-         gap: 8px;
-         min-width: 44px;
-         max-width: 44px;
+   }  
+   
+        &__actions{
+       margin-left: auto;
+        display: flex;
+        gap: 8px;
+        min-width: 44px;
+        max-width: 44px;
 
         & svg {
             &:hover{
                 opacity: 0.7;
             }
         }
+        }
    }
+
+   
+
+ 
 }

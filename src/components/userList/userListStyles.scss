@@ -1,0 +1,62 @@
+@import '../../styles/variables';
+.user-list{
+
+    display: flex;
+    flex-direction: column;
+    max-height: 100%;
+    overflow: auto;
+    gap: 10px;
+    
+ 
+   &__item{
+        
+        min-height: 40px;
+        display: flex;
+        gap: 8px;
+        align-items: flex-start;
+        cursor: pointer;
+        padding: 10px 10px;
+        color: $color-baseblack;
+        font-size: 15px;
+        font-weight: 500;
+        box-shadow: $color-delimetershadow;
+        border-bottom: 1px solid $color-dirtywhite;
+
+        &:hover{
+            background-color: $color-dirtywhite;
+        }
+   }
+
+   &__item-descr{
+        display: flex;
+        gap: 4px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+   }
+
+   &__item-descr-and-title{
+    flex-direction: row;
+    
+   }
+
+   &__item-title{
+        font-weight: 600; 
+        gap: 10px; 
+    }
+
+
+    &__btn-chahge-role{
+        margin-left: auto;
+        display: flex;
+        flex-direction: row;
+       
+         
+         gap: 10px;
+            &:hover{
+                opacity: 0.8;
+                
+            }
+   }
+}

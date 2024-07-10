@@ -21,11 +21,15 @@ export const LoginPage: FC = () => {
 
     useEffect(() => {
       if(accessToken) {
-          if(role === 'rpd' || !role) {
-              navigate(`/${RoutesPath.InfoPage}`);
-          } else {
+          if(role === 'user'|| !role)
+        {
+            navigate(`/${RoutesPath.NoPermissions}`);
+        }
+        if(role === 'admin'|| !role)
+          {  navigate(`/${RoutesPath.Administration}`);}
+        else {
+             navigate(`/${RoutesPath.InfoPage}`);
              // navigate(`/${RoutesPath.Login}`);
-             console.log("ERROR")
           }
       }
   }, [accessToken, role, navigate]);
@@ -42,19 +46,23 @@ export const LoginPage: FC = () => {
       dispatch(signIn({login, password}));
   }
 
+  const toRegistrationHandler = () => {
+    navigate(RoutesPath.Registration)
+};
+
   //   const roleChangedHandler = (value: string) => {
   //     setRole(value);
   // };
 
-    // const toGenerateDocsHandler = () => {
-    //   if(login&&password)
-    //     navigate(RoutesPath.InfoPage);
-    //   else 
-    //   {
-    //     setErrorMessage('Заполните поле ')
-    //   }
+    const toGenerateDocsHandler = () => {
+      if(login&&password)
+        navigate(RoutesPath.InfoPage);
+      else 
+      {
+        setErrorMessage('Заполните поле ')
+      }
  
-    // }
+    }
 
     return(
       <WidgetLayout>
@@ -80,6 +88,7 @@ export const LoginPage: FC = () => {
             ]} /> */}
         </div>
         <Button text="Войти" onClick = {loginHandler}/>
+        <Button text="Регистрация" onClick = {toRegistrationHandler}/>
       </div>
       </WidgetLayout>
     );

@@ -1,0 +1,74 @@
+@import '../../styles/variables.scss';
+table, th {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 10px;
+    width: 750px;
+    height: auto;
+    // font-size: 16px;
+    box-shadow: $color-delimetershadow;
+    border-bottom: 1px solid $color-dirtywhite;
+    
+  }
+  td{
+  
+    border: 1px solid black;
+    border-collapse: collapse;
+    max-width: 300px;
+    box-shadow: $color-delimetershadow;
+    border-bottom: 1px solid $color-dirtywhite;
+    overflow: auto;
+    padding: 5px;
+    
+  }
+.info{
+  
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    gap: 15px;
+    padding: 5px;
+    overflow: auto;
+
+    &__title{
+      //margin-bottom: auto;
+     margin-top: 10px;}
+
+    &__table{
+
+      display: flex;
+      width: auto;
+      height: auto;
+      font-size: 16px;
+      flex-direction: column;
+      font-weight: 100;
+      gap: 15px;
+      
+        
+     }
+
+    &__data{
+        display: flex;
+        flex-direction: column;
+        font-size: 18px;
+        font-weight: 200;
+        gap: 15px;
+    
+        &__title{
+            display: flex;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        &__row {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+        }
+    }
+
+   
+
+}

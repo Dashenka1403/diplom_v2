@@ -11,6 +11,9 @@ export interface TableProps  {
     compDescription: Array<CompetenceInfo>;
     open?:boolean;
     className?: string;
+    onItemAdd?: () => void;
     onItemEdit?: (id: number) => void;
-    action?:  (value : string) => void;
+    onItemClick?:(id:number) => void;
+    onItemDelete?: (id:number) => void;
+    //action?:  (value : string) => void;
 }

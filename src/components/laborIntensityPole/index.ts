@@ -1,0 +1,1 @@
+export {LaborIntensityPole} from './LaborIntensityPole'

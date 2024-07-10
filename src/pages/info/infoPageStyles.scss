@@ -22,10 +22,12 @@
 
         &__title{
             display: flex;
+            align-items: center;
             justify-content: center;
             font-weight: 700px;
-            font-size: 20px;
+            font-size: 21px;
             color: $color-baseblack;
+            flex-direction: row;
             
         }
     }

@@ -6,4 +6,6 @@ export {DisciplineList} from './disciplineList';
 export {GroupList} from './groupList';
 export {Dialog} from './dialog';
 export {InfoTable} from './infoTable';
-export {Information} from './informationPole'
+export {Information} from './informationPole';
+export {UserList} from './userList';
+export {LaborIntensityPole} from './laborIntensityPole'

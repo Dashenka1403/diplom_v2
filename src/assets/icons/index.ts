@@ -5,4 +5,7 @@ export {CancelIcon} from "./CancelIcon";
 export {StatusNewIcon} from './StatusNewIcon';
 export {StatusDoneIcon} from './StatusDoneIcon';
 export {StatusApprovedIcon} from './StatusApprovedIcon';
+export {StatusFinishedIcon} from './StatusFinishedicon';
+export {StatusInWorkIcon} from './StatusInWorkIcon';
 export {PencilIcon} from './PencilIcon';
+export {TrashIcon} from './TrashIcon';

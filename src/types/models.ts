@@ -1,11 +1,11 @@
 export interface User {
     id: number;
-    firstName: string;
-    lastName: string;
-    midleName?: string;
+    firstname: string;
+    lastname: string;
+    midname?: string;
     login: string;
     password: string;
-    role: 'admin' | 'zav_kaf' | 'ruk_OP'| 'teacher';
+    role: 'admin' | 'manager' | 'ruk_OP'| 'rpd';
     groups: Array<EducationProgram>;
    // disciplines: Array<Discipline>;
    
@@ -13,7 +13,7 @@ export interface User {
 export interface EducationProgram{
     id: number;
     title:string;
-    year:number;
+    year:string;
     description?: string;
     disciplines: Array<Discipline>
     competences: Array<CompetenceInfo>;
@@ -21,35 +21,36 @@ export interface EducationProgram{
 
 export interface Discipline{
     id:number;
-    codeDisc?: number;
+    codeDisc?: string;
     shortName?: string;
     title: string;
     status:'Новая' | 'В работе' | 'Утверждена'| 'Готова'| 'Завершена';
     goal?: string;
     task?: string;
-    info: Array<DisciplineInfo>;
-    laborIntensity: Array<LaborIntensity>;
+    disciplineInfos: Array<DisciplineInfo>;
+    laborIntensities: Array<LaborIntensity>;
 }
 
 export interface CompetenceInfo {
     id:number;
-    codeComp: string;
+    codeCompetence: string;
     description: string;
 }
 
 export interface DisciplineInfo {
-    id:number;
-    codeComp: string;
+    codeCompetence: string;
     description?: string;
+    id:number;
     knowledge?:string;
-    skill?: string;
     ownership?: string;
+    skill?: string;
 }
 
 export interface LaborIntensity{
     id: number;
-    id_sem: number;
+    idSem: string;
     info: string;
+    kolHours: string;
 }
 
 

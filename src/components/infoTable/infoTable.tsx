@@ -40,18 +40,3 @@ export const InfoTable:FC<InfoTableProps> = props => {
         </div>
     )
 }
-
-
-// {tabs.map(tab =>{
- 
-//     <div key={tab.id} 
-//     className={clsx('info-table__columns__item', {'info-table__columns__item_selected':isSelected(tab.id)})}
-//     onClick={() =>tabClickHandler(tab.id)}
-//     >
-
-//         <div className='discipline-list__item-fio'>
-//             {` ${tab.} (${discipline.status })`.trim() }  
-//         </div>  
-           
-//     </div>
-//     ;})}

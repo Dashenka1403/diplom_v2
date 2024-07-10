@@ -12,6 +12,7 @@ table, th {
   
 }
 td{
+
   border: 1px solid black;
   border-collapse: collapse;
   max-width: 300px;
@@ -19,6 +20,7 @@ td{
   border-bottom: 1px solid $color-dirtywhite;
   overflow: auto;
   padding: 5px;
+  
 }
 
 .results{
@@ -28,12 +30,15 @@ td{
   height: 100%;
   flex-direction: column;
   overflow: auto;
- 
+  flex-direction: column;
+  gap: 15px;
+ // padding-top: 30px;
 
   &__title{
     display: flex;
     justify-content: center;
     font-weight: 600;
+    margin-top: 15px;
     //padding-bottom: 10px;
   }
    
@@ -45,19 +50,30 @@ td{
     font-size: 16px;
     flex-direction: column;
     font-weight: 100;
-    gap: 15px;
+    gap: 15px; 
+
    // margin-top: 20px;
     //overflow-y: auto;
-    max-height: 100%;
-    max-width: 100%;
+    // max-height: 100%;
+    // max-width: 100%;
     //box-shadow: $color-delimetershadow;
     //border-bottom: 1px solid $color-dirtywhite;
     padding: 20px;
+    justify-content: center;
+  align-items: center;
     
   
     &__title{
          margin-bottom: auto;
         margin-top: 10px;
+
+        &__actions{
+          display: flex;
+          flex-direction: row;
+          gap: 5px;
+          justify-content: center;
+          align-items: center;
+        }
     }
    
   }

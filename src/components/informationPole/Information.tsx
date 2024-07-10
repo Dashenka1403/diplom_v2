@@ -7,7 +7,7 @@ import { TextField } from "../textField";
 
 export const Information:FC<InformationProps> = props => {
 
-    const {disciplines, onTabClick, children} = props;
+    const {disciplines, onTabClick} = props;
    // const [selectedComp,setSelectedComp] = useState(competences[1].id);
     
 
@@ -25,13 +25,17 @@ export const Information:FC<InformationProps> = props => {
                     <div key={disc.id}  className='info__data'>
                       
                         <div className='info__data__row'>
-                            <div> Цели:  </div>
+                            <div className='info__data__row__title'>  <div> Цели дисциплины :  </div>
+                             <h4>{disc.title}</h4> 
+                            </div>
                            
-                            {disc.goal}
+                            {disc?.goal}
                         </div>
                         <div className='info__data__row'>
-                        <div> Задачи: </div>
-                            {disc.task}</div>
+                        <div className='info__data__row__title'>  <div> Задачи дисциплины :  </div>
+                             <h4>{disc.title}</h4> 
+                        </div>
+                            {disc?.task}</div>
         
                     </div>)
                     }

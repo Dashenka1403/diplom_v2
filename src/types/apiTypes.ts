@@ -15,80 +15,62 @@ export interface RegistrationRequestDto {
     password: string;
     lastName: string;
     firstName: string;
-    middleName: string;
+    midName?: string;
 }
 
-export interface AddDepartmentResponseDto {
-    name: string;
+export interface AddEducationProgrammResponseDto {
+    userId: number| string;
+    title: string;
+    year: string;
     description?: string;
 }
 
-export interface EditDepartmentResponseDto {
+export interface EditEducationProgrammResponseDto {
     id: number;
-    name: string;
+    title: string;
+    year: string;
     description?: string;
 }
 
 export interface SetRoleResponseDto {
     userId: number;
-    roleName: 'admin' | 'manager' | 'user';
+    roleName: 'admin' | 'oop' | 'rpd';
 }
 
-export interface AddEmployeeResponseDto {
-    departmentId: number;
-    firstName: string;
-    lastName: string;
-    midleName?: string;
-    email: string;
-    phoneNumber: string;
-    birthDate: string;
+export interface AddDisciplineInfoResponseDto {
+    disciplineId: number;
+    codeCompetence: string;
+    description: string;
+    skill?: string;
+    ownership: string;
+    knowledge: string;
 }
 
-export interface UpdateEmployeeResponseDto {
+export interface EditDisciplineInfoResponseDto {
     id: number;
-    firstName: string;
-    lastName: string;
-    midleName?: string;
-    email: string;
-    phoneNumber: string;
-    birthDate: string;
-    educations: Array<{
-        id: number;
-        title: string;
-        description?: string;
-    }>;
-    workExperience: Array<{
-        id: number;
-        workedYears: number;
-        description?: string;
-    }>;
-    userFiles: Array<{
-        id: number;
-        systemName: string;
-        displayName: string;
-    }>;
+    codeCompetence: string;
+    description: string;
+    skill?: string;
+    ownership: string;
+    knowledge: string;
 }
 
-export interface AddWorkExperienceResponseDto {
-    employeeId: number;
-    workedYears: number;
-    description?: string;
-}
-
-export interface AddEducationResponseDto {
-    employeeId: number;
+export interface AddDisciplineResponseDto {
+    edProgrammId: number;
+    codeDiscipline: string;
+    shortName: string;
     title: string;
-    description?: string;
+    goal: string;
+    task: string;
+    status: string;
 }
 
-export interface UploadFileResponseDto {
-    employeeId: number;
-    fileString: string;
-    fileName: string;
-    
-}
-
-export interface DownloadFileResponseDto {
-    systemName: string;
-    displayName: string;
+export interface EditDisciplineResponseDto {
+    id: number;
+    codeDiscipline: string;
+    shortName: string;
+    title: string;
+    goal: string;
+    task: string;
+    status: string;
 }
